@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>JsonApiDotNetCore.Demo.Auth.Data</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="JsonApiDotNetCore" Version="4.0.3" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
+    </ItemGroup>
+
+</Project>

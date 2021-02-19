@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonApiDotNetCore.Demo.Auth.Api", "src\JsonApiDotNetCore.Demo.Auth.Api\JsonApiDotNetCore.Demo.Auth.Api.csproj", "{2D42152A-EA4C-486E-BEFD-85CF123F66DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonApiDotNetCore.Demo.Auth.Data", "src\JsonApiDotNetCore.Demo.Auth.Data\JsonApiDotNetCore.Demo.Auth.Data.csproj", "{DC616AFB-6100-4662-B072-26265DC78FD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AB6B9ADA-DA1F-40CF-B688-FB8852A4B715}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D42152A-EA4C-486E-BEFD-85CF123F66DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D42152A-EA4C-486E-BEFD-85CF123F66DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D42152A-EA4C-486E-BEFD-85CF123F66DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D42152A-EA4C-486E-BEFD-85CF123F66DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC616AFB-6100-4662-B072-26265DC78FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC616AFB-6100-4662-B072-26265DC78FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC616AFB-6100-4662-B072-26265DC78FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC616AFB-6100-4662-B072-26265DC78FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D42152A-EA4C-486E-BEFD-85CF123F66DB} = {AB6B9ADA-DA1F-40CF-B688-FB8852A4B715}
+		{DC616AFB-6100-4662-B072-26265DC78FD1} = {AB6B9ADA-DA1F-40CF-B688-FB8852A4B715}
+	EndGlobalSection
+EndGlobal
