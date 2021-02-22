@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace JsonApiDotNetCore.Demo.Auth.Api
 {
@@ -27,9 +28,6 @@ namespace JsonApiDotNetCore.Demo.Auth.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication("Key").AddKey();
-            services.AddAuthorization();
-
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), builder =>
@@ -46,18 +44,21 @@ namespace JsonApiDotNetCore.Demo.Auth.Api
             {
                 options.Namespace = "api";
             });
+            
+            services.AddAuthentication("Key").AddKey();
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext dataContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext dataContext, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                loggerFactory.AddFile("logs/log_{Date}.txt");
             }
             
             app.UseRouting();
-
+            
             app.UseAuthentication();
             app.UseAuthorization();
             

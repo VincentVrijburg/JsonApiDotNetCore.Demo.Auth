@@ -1,0 +1,100 @@
+2021-02-22T18:15:19.4511820+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-02-22T18:15:19.4799770+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-02-22T18:15:19.4834240+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-02-22T18:15:19.4867150+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-02-22T18:15:19.4913480+01:00  [INF] Content root path: "/Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api" (b5d60022)
+2021-02-22T18:15:37.7795870+01:00 0HM6NALRAF5KA:00000001 [ERR] Connection id ""0HM6NALRAF5KA"", Request id ""0HM6NALRAF5KA:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+JsonApiDotNetCore.Errors.JsonApiException: Errors = [
+  {
+    "Id": "567bef88-2f39-4e18-a21f-6cef6e42c776",
+    "Status": "401",
+    "Title": "Unauthorized",
+    "Detail": "Invalid API key. Check our documentation for authentication: https://docs.example.com"
+  }
+]
+   at JsonApiDotNetCore.Demo.Auth.Api.Handlers.KeyAuthenticationHandler.HandleChallengeAsync(AuthenticationProperties properties) in /Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api/Handlers/KeyAuthenticationHandler.cs:line 53
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonApiDotNetCore.Middleware.JsonApiMiddleware.Invoke(HttpContext httpContext, IControllerResourceMapping controllerResourceMapping, IJsonApiOptions options, IJsonApiRequest request, IResourceContextProvider resourceContextProvider) in C:\projects\jsonapidotnetcore\src\JsonApiDotNetCore\Middleware\JsonApiMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-02-22T18:18:31.5866550+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-02-22T18:18:31.5931710+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-02-22T18:18:31.5962700+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-02-22T18:18:31.5995860+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-02-22T18:18:31.6257990+01:00  [INF] Content root path: "/Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api" (b5d60022)
+2021-02-22T18:18:38.8341600+01:00 0HM6NANH9GH94:00000001 [ERR] Connection id ""0HM6NANH9GH94"", Request id ""0HM6NANH9GH94:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+JsonApiDotNetCore.Errors.JsonApiException: Errors = [
+  {
+    "Id": "07001031-d369-422d-bc1a-e6b09d7e11af",
+    "Status": "401",
+    "Title": "Unauthorized",
+    "Detail": "Invalid API key. Check our documentation for authentication: https://docs.example.com"
+  }
+]
+   at JsonApiDotNetCore.Demo.Auth.Api.Handlers.KeyAuthenticationHandler.HandleChallengeAsync(AuthenticationProperties properties) in /Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api/Handlers/KeyAuthenticationHandler.cs:line 53
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonApiDotNetCore.Middleware.JsonApiMiddleware.Invoke(HttpContext httpContext, IControllerResourceMapping controllerResourceMapping, IJsonApiOptions options, IJsonApiRequest request, IResourceContextProvider resourceContextProvider) in C:\projects\jsonapidotnetcore\src\JsonApiDotNetCore\Middleware\JsonApiMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-02-22T18:35:33.7341430+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-02-22T18:35:33.7400170+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-02-22T18:35:33.7431890+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-02-22T18:35:33.7454920+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-02-22T18:35:33.7477570+01:00  [INF] Content root path: "/Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api" (b5d60022)
+2021-02-22T18:35:38.3325130+01:00 0HM6NB11DKFBO:00000001 [ERR] Connection id ""0HM6NB11DKFBO"", Request id ""0HM6NB11DKFBO:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+JsonApiDotNetCore.Errors.JsonApiException: Errors = [
+  {
+    "Id": "778654b1-2dc7-438e-a684-2544338c7cca",
+    "Status": "401",
+    "Title": "Unauthorized",
+    "Detail": "Invalid API key. Check our documentation for authentication: https://docs.example.com"
+  }
+]
+   at JsonApiDotNetCore.Demo.Auth.Api.Handlers.KeyAuthenticationHandler.HandleChallengeAsync(AuthenticationProperties properties) in /Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api/Handlers/KeyAuthenticationHandler.cs:line 53
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonApiDotNetCore.Middleware.JsonApiMiddleware.Invoke(HttpContext httpContext, IControllerResourceMapping controllerResourceMapping, IJsonApiOptions options, IJsonApiRequest request, IResourceContextProvider resourceContextProvider) in C:\projects\jsonapidotnetcore\src\JsonApiDotNetCore\Middleware\JsonApiMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-02-22T18:35:56.2617900+01:00 0HM6NB11DKFBO:00000002 [ERR] Connection id ""0HM6NB11DKFBO"", Request id ""0HM6NB11DKFBO:00000002"": An unhandled exception was thrown by the application. (560e7d32)
+JsonApiDotNetCore.Errors.JsonApiException: Errors = [
+  {
+    "Id": "ee91e1fe-668d-4ac4-b1b6-ee3fbd9181ed",
+    "Status": "401",
+    "Title": "Unauthorized",
+    "Detail": "Invalid API key. Check our documentation for authentication: https://docs.example.com"
+  }
+]
+   at JsonApiDotNetCore.Demo.Auth.Api.Handlers.KeyAuthenticationHandler.HandleChallengeAsync(AuthenticationProperties properties) in /Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api/Handlers/KeyAuthenticationHandler.cs:line 53
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonApiDotNetCore.Middleware.JsonApiMiddleware.Invoke(HttpContext httpContext, IControllerResourceMapping controllerResourceMapping, IJsonApiOptions options, IJsonApiRequest request, IResourceContextProvider resourceContextProvider) in C:\projects\jsonapidotnetcore\src\JsonApiDotNetCore\Middleware\JsonApiMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-02-22T18:39:03.5825760+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-02-22T18:39:03.5881610+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-02-22T18:39:03.5912080+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-02-22T18:39:03.5934040+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-02-22T18:39:03.5957090+01:00  [INF] Content root path: "/Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api" (b5d60022)
+2021-02-22T18:39:09.0729010+01:00 0HM6NB309TMHU:00000001 [ERR] Connection id ""0HM6NB309TMHU"", Request id ""0HM6NB309TMHU:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+JsonApiDotNetCore.Errors.JsonApiException: Errors = [
+  {
+    "Id": "b4410655-d392-40ac-b56a-fec08bcc6f2d",
+    "Status": "401",
+    "Title": "Unauthorized",
+    "Detail": "Invalid API key. Check our documentation for authentication: https://docs.example.com"
+  }
+]
+   at JsonApiDotNetCore.Demo.Auth.Api.Handlers.KeyAuthenticationHandler.HandleChallengeAsync(AuthenticationProperties properties) in /Users/vincentvrijburg/Github/JsonApiDotNetCore.Demo.Auth/src/JsonApiDotNetCore.Demo.Auth.Api/Handlers/KeyAuthenticationHandler.cs:line 53
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JsonApiDotNetCore.Middleware.JsonApiMiddleware.Invoke(HttpContext httpContext, IControllerResourceMapping controllerResourceMapping, IJsonApiOptions options, IJsonApiRequest request, IResourceContextProvider resourceContextProvider) in C:\projects\jsonapidotnetcore\src\JsonApiDotNetCore\Middleware\JsonApiMiddleware.cs:line 63
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
