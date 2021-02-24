@@ -1,8 +1,8 @@
-using System;
 using System.Net;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using JsonApiDotNetCore.Configuration;
 using JsonApiDotNetCore.Demo.Auth.Api.Extensions;
 using JsonApiDotNetCore.Demo.Auth.Api.Services.Abstractions;
 using JsonApiDotNetCore.Demo.Auth.Data.Models.Configuration;
@@ -26,10 +26,11 @@ namespace JsonApiDotNetCore.Demo.Auth.Api.Handlers
             ILoggerFactory logger, 
             UrlEncoder encoder, 
             IExceptionHandler exceptionHandler,
+            IJsonApiOptions jsonApiOptions,
             ISystemClock clock) : base(options, logger, encoder, clock)
         {
             _keyAuthenticationService = keyAuthenticationService;
-            _errorResponseWriter = new ErrorResponseWriter(exceptionHandler);
+            _errorResponseWriter = new ErrorResponseWriter(exceptionHandler, jsonApiOptions);
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -58,7 +59,9 @@ namespace JsonApiDotNetCore.Demo.Auth.Api.Handlers
             var exception = new JsonApiException(new Error(HttpStatusCode.Unauthorized)
             {
                 Title = "Unauthorized",
-                Detail = "Invalid API key. Check our documentation for authentication: https://docs.example.com"
+                Detail = "Invalid API key. Check our documentation for authentication: https://docs.example.com",
+                Code = "API_KEY_INVALID"
+                
             });
 
             // Comment out the next line and uncomment the one below to route errors through middleware.
@@ -67,13 +70,19 @@ namespace JsonApiDotNetCore.Demo.Auth.Api.Handlers
             //throw exception;
         }
 
-        protected override Task HandleForbiddenAsync(AuthenticationProperties properties)
+        protected override async Task HandleForbiddenAsync(AuthenticationProperties properties)
         {
-            throw new JsonApiException(new Error(HttpStatusCode.Forbidden)
+            var exception = new JsonApiException(new Error(HttpStatusCode.Forbidden)
             {
                 Title = "Forbidden",
-                Detail = "Insufficient permissions. Check our documentation for authorization: https://docs.example.com"
+                Detail = "Insufficient permissions. Check our documentation for authorization: https://docs.example.com",
+                Code = "PERMISSIONS_INSUFFICIENT"
             });
+            
+            // Comment out the next line and uncomment the one below to route errors through middleware.
+            await _errorResponseWriter.RenderExceptionAsync(exception, Response);
+
+            //throw exception;
         }
     }
 }

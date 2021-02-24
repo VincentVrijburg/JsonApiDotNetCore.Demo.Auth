@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using JsonApiDotNetCore.Configuration;
 using JsonApiDotNetCore.Middleware;
 using Microsoft.AspNetCore.Http;
 
@@ -10,10 +11,10 @@ namespace JsonApiDotNetCore.Demo.Auth.Api
         private readonly RequestDelegate _next;
         private readonly ErrorResponseWriter _errorResponseWriter;
 
-        public ExceptionMiddleware(IExceptionHandler exceptionHandler, RequestDelegate next)
+        public ExceptionMiddleware(IExceptionHandler exceptionHandler, IJsonApiOptions jsonApiOptions, RequestDelegate next)
         {
             _next = next;
-            _errorResponseWriter = new ErrorResponseWriter(exceptionHandler);
+            _errorResponseWriter = new ErrorResponseWriter(exceptionHandler, jsonApiOptions);
         }
 
         public async Task Invoke(HttpContext httpContext)

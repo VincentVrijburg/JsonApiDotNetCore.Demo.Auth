@@ -28,6 +28,9 @@ namespace JsonApiDotNetCore.Demo.Auth.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication("Key").AddKey();
+            services.AddAuthorization();
+            
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), builder =>
@@ -44,9 +47,6 @@ namespace JsonApiDotNetCore.Demo.Auth.Api
             {
                 options.Namespace = "api";
             });
-            
-            services.AddAuthentication("Key").AddKey();
-            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
