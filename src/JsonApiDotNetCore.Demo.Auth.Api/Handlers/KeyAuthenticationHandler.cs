@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
@@ -6,6 +7,7 @@ using JsonApiDotNetCore.Demo.Auth.Api.Extensions;
 using JsonApiDotNetCore.Demo.Auth.Api.Services.Abstractions;
 using JsonApiDotNetCore.Demo.Auth.Data.Models.Configuration;
 using JsonApiDotNetCore.Errors;
+using JsonApiDotNetCore.Middleware;
 using JsonApiDotNetCore.Serialization.Objects;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
@@ -16,15 +18,18 @@ namespace JsonApiDotNetCore.Demo.Auth.Api.Handlers
     public class KeyAuthenticationHandler : AuthenticationHandler<KeyAuthenticationOptions>
     {
         private readonly IKeyAuthenticationService _keyAuthenticationService;
-        
+        private readonly ErrorResponseWriter _errorResponseWriter;
+
         public KeyAuthenticationHandler(
             IKeyAuthenticationService keyAuthenticationService,
             IOptionsMonitor<KeyAuthenticationOptions> options, 
             ILoggerFactory logger, 
             UrlEncoder encoder, 
+            IExceptionHandler exceptionHandler,
             ISystemClock clock) : base(options, logger, encoder, clock)
         {
             _keyAuthenticationService = keyAuthenticationService;
+            _errorResponseWriter = new ErrorResponseWriter(exceptionHandler);
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -48,18 +53,23 @@ namespace JsonApiDotNetCore.Demo.Auth.Api.Handlers
             return AuthenticateResult.Success(ticket);
         }
 
-        protected override Task HandleChallengeAsync(AuthenticationProperties properties)
+        protected override async Task HandleChallengeAsync(AuthenticationProperties properties)
         {
-            throw new JsonApiException(new Error(HttpStatusCode.Unauthorized)
+            var exception = new JsonApiException(new Error(HttpStatusCode.Unauthorized)
             {
                 Title = "Unauthorized",
                 Detail = "Invalid API key. Check our documentation for authentication: https://docs.example.com"
             });
+
+            // Comment out the next line and uncomment the one below to route errors through middleware.
+            await _errorResponseWriter.RenderExceptionAsync(exception, Response);
+
+            //throw exception;
         }
 
         protected override Task HandleForbiddenAsync(AuthenticationProperties properties)
         {
-            throw new JsonApiException(new Error(HttpStatusCode.Unauthorized)
+            throw new JsonApiException(new Error(HttpStatusCode.Forbidden)
             {
                 Title = "Forbidden",
                 Detail = "Insufficient permissions. Check our documentation for authorization: https://docs.example.com"

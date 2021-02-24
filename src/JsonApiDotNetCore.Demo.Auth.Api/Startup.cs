@@ -56,7 +56,10 @@ namespace JsonApiDotNetCore.Demo.Auth.Api
             {
                 loggerFactory.AddFile("logs/log_{Date}.txt");
             }
-            
+
+            // Uncomment the next line to catch exceptions thrown from authentication.
+            //app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseRouting();
             
             app.UseAuthentication();
