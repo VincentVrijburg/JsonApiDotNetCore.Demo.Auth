@@ -1,5 +1,5 @@
 # JsonApiDotNetCore.Demo.Auth
-Demo implementation of key based authentication in the JsonApiDotNetCore framework.
+Demo implementation of API key-based authentication in the JsonApiDotNetCore framework.
 
 
 ## Installation
